@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mau & Marcel · 29 de noviembre</title>
-<meta name="description" content="La familia Peña te invita a la Primera Comunión de Mau y el Bautizo de Marcel. Confirma tu asistencia aquí.">
+<meta name="description" content="La familia Peña Guijosa te invita a la Primera Comunión de Mau y el Bautizo de Marcel. Confirma tu asistencia aquí.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mau &amp; Marcel · 29 de noviembre">
-<meta property="og:description" content="La familia Peña te invita a la Primera Comunión de Mau y el Bautizo de Marcel. Confirma tu asistencia aquí.">
+<meta property="og:description" content="La familia Peña Guijosa te invita a la Primera Comunión de Mau y el Bautizo de Marcel. Confirma tu asistencia aquí.">
 <meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/preview.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#2a1f16">
@@ -25,7 +25,8 @@ main{max-width:480px;margin:0 auto}
 .vid{position:relative;width:100%;aspect-ratio:9/16;max-height:calc(100svh - 76px);background:#2a1f16 url("poster.jpg") center/cover no-repeat}
 .vid video{width:100%;height:100%;object-fit:cover;display:block}
 .vid::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(transparent,var(--wood));pointer-events:none}
-.snd{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(42,31,22,.55);color:var(--linen);font-size:20px;cursor:pointer;backdrop-filter:blur(4px)}
+.snd{position:fixed;right:12px;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:50;height:44px;min-width:44px;padding:0 13px;border-radius:22px;border:0;background:rgba(42,31,22,.62);color:var(--linen);font:600 13px var(--body);display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;backdrop-filter:blur(4px)}
+.snd .ic{font-size:20px;line-height:1}.snd.on .tx{display:none}.snd.on{padding:0}.snd.on{width:44px}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 h2:focus{outline:0}
 .next{display:flex;flex-direction:column;align-items:center;gap:2px;margin:auto;padding:14px 20px;background:none;border:0;color:var(--gold);font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;cursor:pointer}
@@ -38,7 +39,7 @@ h2:focus{outline:0}
 .step.open>*:not(.edge){animation:up .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--k,0)*110ms)}
 @keyframes up{from{opacity:0;transform:translateY(22px)}}
 .step{scroll-margin-top:env(safe-area-inset-top,0px)}
-.edge{display:block;width:100%;height:26px;margin:-70px 0 44px;position:relative}
+.edge{display:block;width:calc(100% + 52px);max-width:none;height:26px;margin:-70px -26px 44px;position:relative}
 .eye{font:600 12px var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--golddk);margin:0 0 6px}
 .badge{width:70px;height:70px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;border:1.5px solid var(--gold);background:radial-gradient(circle,#fbf5e6,transparent 75%)}
 .badge svg{width:36px;height:36px;stroke:var(--bronze);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -50,6 +51,9 @@ h2{font:italic 600 54px/1 var(--serif);margin:0 0 14px;color:var(--bronze);lette
 .time small{font-size:.42em;letter-spacing:.12em;margin-left:6px}
 .place{font:600 21px/1.25 var(--serif);margin:0 auto;max-width:22ch}
 .muted{margin:8px auto 0;color:#625a48;font-size:15px;max-width:32ch}
+.lead{font:italic 600 25px/1.2 var(--serif);color:var(--ink);margin:6px auto 4px;max-width:20ch}
+.muted,.place,.time,.lead,h2,footer{text-wrap:balance}
+.sprig{display:block;width:92px;height:30px;margin:0 auto 14px;fill:var(--gold);stroke:var(--gold)}
 .orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 0;color:var(--gold)}
 .orn i{height:1px;width:0;background:currentColor;animation:grow 1.2s .7s ease forwards}
 .orn svg{width:12px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round}
@@ -76,9 +80,23 @@ input{width:100%;font:400 16px var(--body);padding:14px;border-radius:14px;borde
 .chip{min-height:44px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--bronze);background:transparent;color:var(--bronze);font:400 15px var(--body);cursor:pointer}
 .chip[aria-pressed=true]{background:var(--bronze);color:#fff}
 .err{color:#9b2c1d;font-size:15px;min-height:22px;margin:10px 0 0}
-footer{background:var(--linen);color:#625a48;text-align:center;padding:8px 28px 48px}
+footer{background:var(--linen) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .15 0 0 0 .1 0'/></filter><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='.5' seed='7'/><feColorMatrix values='0 0 0 0 .62 0 0 0 0 .46 0 0 0 0 .24 0 0 0 9 -6.4'/></filter><rect width='100%' height='100%' filter='url(%23g)'/><rect width='100%' height='100%' filter='url(%23s)' opacity='.55'/></svg>");color:#625a48;text-align:center;padding:6px 26px 52px}
+.js footer:not(.open){display:none}
+footer.open>*:not(.win){animation:up .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--k,0)*110ms)}
+.win{margin:0 -26px 24px;opacity:0;transform:translateY(20px);transition:opacity 1.6s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.win.in{opacity:1;transform:none}
+.win video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;-webkit-mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent),linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent),linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);mask-composite:intersect}
+.giftcta{margin-top:36px;padding:24px 18px 26px;border:1.5px dashed var(--gold);border-radius:24px;background:rgba(255,251,238,.6)}
+.giftcta svg{width:38px;height:38px;stroke:var(--golddk);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.giftcta .lead{margin:6px auto 0;font-size:24px}
+.btn.gold{background:linear-gradient(#dcb870,#c49c50);color:#2a1f16;box-shadow:0 4px 0 #8a6d34}
+.btn.gold:active{box-shadow:0 1px 0 #8a6d34}
+.fab{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:40;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 12px;border-radius:22px;border:1px solid rgba(201,164,92,.55);background:rgba(42,31,22,.74);color:#f1e9d8;font:600 13px var(--body);cursor:pointer;backdrop-filter:blur(5px);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .6s,transform .6s}
+.fab svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fab.show{opacity:.94;transform:none;pointer-events:auto}
+.fab.show.gone{opacity:0;transform:translateY(16px);pointer-events:none}
 footer b{display:block;font:italic 600 38px var(--serif);color:var(--bronze)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.open .badge svg *{stroke-dashoffset:0}.orn i{width:64px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.open .badge svg *{stroke-dashoffset:0}.win{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -86,7 +104,7 @@ footer b{display:block;font:italic 600 38px var(--serif);color:var(--bronze)}
 <section class="hero">
 <div class="vid">
 <video id="v" src="video.mp4" poster="poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Invitación a la Primera Comunión de Mau y el Bautizo de Marcel"></video>
-<button type="button" class="snd" id="snd" aria-label="Activar sonido">🔇</button>
+<button type="button" class="snd" id="snd" aria-label="Activar sonido"><span class="ic">🔇</span><span class="tx">Toca para activar el sonido</span></button>
 </div>
 <button type="button" class="next" data-next="s1">Descubre los detalles<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
 </section>
@@ -108,28 +126,16 @@ footer b{display:block;font:italic 600 38px var(--serif);color:var(--bronze)}
 <p class="eye">Después</p>
 <div class="badge"><svg viewBox="0 0 32 32"><circle cx="16" cy="17" r="10"/><circle cx="16" cy="17" r="5"/><path d="M3 5v8M6 5v8M3 9h3M4.500 13v14M29 5c-2 2-2 6 0 8M29 5v22"/></svg></div>
 <h2 tabindex="-1">La comida</h2>
-<p class="date">Al terminar la misa</p>
-<p class="place" style="margin-top:12px">Restaurante El Puntal del Norte</p>
-<p class="muted">Compartiremos la mesa para celebrar juntos.</p>
+<p class="date">Restaurante</p>
+<p class="time" style="font-size:44px">El Puntal del Norte</p>
+<p class="muted">Al terminar la misa compartiremos la mesa para celebrar juntos.</p>
 <a class="btn" href="https://maps.app.goo.gl/YjswcwLkzZXA3AAR9?g_st=ic" target="_blank" rel="noopener">Cómo llegar al restaurante</a>
-<button type="button" class="next" data-next="s3">Mesas de regalo<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+<button type="button" class="next" data-next="rsvp">Confirmar asistencia<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
 </section>
 
-<section class="step" id="s3">
-<p class="eye">Con cariño</p>
-<div class="badge"><svg viewBox="0 0 32 32"><rect x="4" y="12" width="24" height="16" rx="2"/><path d="M4 18h24M16 12v16"/><path d="M16 12c-4-8-10-5-7 0M16 12c4-8 10-5 7 0"/></svg></div>
-<h2 tabindex="-1">Mesas de regalo</h2>
-<p class="muted">Tu presencia es nuestro mejor regalo. Si deseas tener un detalle, aquí están nuestras listas.</p>
-<p class="who">Para Mauricio</p>
-<a class="btn" href="https://www.amazon.com.mx/registries/gl/guest-view/3DA690CNQIUK3?ref_=cm_sw_r_apin_ggr-subnav-share_W7204JFVYVFR6C9T03AN&amp;language=en-US" target="_blank" rel="noopener">Mesa en Amazon</a>
-<a class="btn alt" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60068566" target="_blank" rel="noopener">Mesa en Liverpool</a>
-<p class="who">Para Marcel</p>
-<a class="btn alt" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60069497" target="_blank" rel="noopener">Mesa en Liverpool</a>
-<button type="button" class="next" data-next="s4">Confirmar asistencia<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-</section>
 
 <section class="step" id="rsvp">
-<p class="eye">Por último</p>
+<p class="eye">Tu respuesta</p>
 <div class="badge"><svg viewBox="0 0 32 32"><path d="M16 28s-11-6.500-11-15a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8.500-11 15-11 15z"/></svg></div>
 <h2 tabindex="-1">¿Nos acompañas?</h2>
 <p class="muted">Confirma en un minuto. Se enviará por WhatsApp a la familia.</p>
@@ -147,12 +153,32 @@ footer b{display:block;font:italic 600 38px var(--serif);color:var(--bronze)}
 </div>
 <p class="err" id="err" role="alert"></p>
 <a class="btn" id="send" href="#rsvp" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+<div class="giftcta">
+<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="12" width="24" height="16" rx="2"/><path d="M4 18h24M16 12v16"/><path d="M16 12c-4-8-10-5-7 0M16 12c4-8 10-5 7 0"/></svg>
+<p class="lead">¿Quieres tener un detalle con Mau y Marcel?</p>
+<button type="button" class="btn gold" data-next="s3">Ver mesas de regalo</button>
+</div>
+</section>
+
+<section class="step" id="s3">
+<p class="eye">Por último</p>
+<div class="badge"><svg viewBox="0 0 32 32"><rect x="4" y="12" width="24" height="16" rx="2"/><path d="M4 18h24M16 12v16"/><path d="M16 12c-4-8-10-5-7 0M16 12c4-8 10-5 7 0"/></svg></div>
+<h2 tabindex="-1">Mesas de regalo</h2>
+<p class="lead">Tu presencia es nuestro mejor regalo.</p>
+<p class="muted">Si deseas tener un detalle, aquí están nuestras listas.</p>
+<p class="who">Para Mauricio</p>
+<a class="btn" href="https://www.amazon.com.mx/registries/gl/guest-view/3DA690CNQIUK3?ref_=cm_sw_r_apin_ggr-subnav-share_W7204JFVYVFR6C9T03AN&amp;language=en-US" target="_blank" rel="noopener">Mesa en Amazon</a>
+<a class="btn alt" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60068566" target="_blank" rel="noopener">Mesa en Liverpool</a>
+<p class="who">Para Marcel</p>
+<a class="btn alt" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60069497" target="_blank" rel="noopener">Mesa en Liverpool</a>
 </section>
 
 <footer>
-<div class="orn" style="margin:0 auto 14px"><i></i><svg viewBox="0 0 14 18"><path d="M7 1v16M2 6h10"/></svg><i></i></div>
-Gracias por acompañarnos en un día tan especial.<b>Familia Peña</b></footer>
+<div class="win" id="win"><video id="cv" data-src="cierre.mp4" poster="cierre.jpg" muted loop playsinline preload="none" aria-label="Tarjeta con el monograma M&amp;M, una vela, una cruz y una rama de olivo"></video></div>
+<svg class="sprig" viewBox="0 0 90 30" aria-hidden="true"><path d="M8 22Q45 4 82 22" fill="none" stroke-width="1.6" stroke-linecap="round"/><g stroke="none"><ellipse cx="19" cy="12" rx="2.4" ry="6" transform="rotate(-55 19 12)"/><ellipse cx="31" cy="8.500" rx="2.4" ry="6" transform="rotate(-35 31 8.500)"/><ellipse cx="45" cy="6.500" rx="2.4" ry="6"/><ellipse cx="59" cy="8.500" rx="2.4" ry="6" transform="rotate(35 59 8.500)"/><ellipse cx="71" cy="12" rx="2.4" ry="6" transform="rotate(55 71 12)"/></g></svg>
+Gracias por acompañarnos en un día tan especial.<b>Familia Peña Guijosa</b></footer>
 </main>
+<button type="button" class="fab" id="fab" data-next="s3" aria-label="Ir a las mesas de regalo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="12" width="24" height="16" rx="2"/><path d="M4 18h24M16 12v16"/><path d="M16 12c-4-8-10-5-7 0M16 12c4-8 10-5 7 0"/></svg>Mesas de regalo</button>
 <script>
 // Número de WhatsApp que recibe las confirmaciones, con lada de país y sin signos. Ej.: "5215512345678"
 const WA="525528883099";
@@ -161,8 +187,8 @@ const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 $$('.badge svg *').forEach(e=>e.setAttribute('pathLength',1));
 $$('.step').forEach(s=>[...s.children].forEach((c,i)=>c.style.setProperty('--k',i)));
 $$('[data-next]').forEach(b=>b.onclick=()=>{
- const id=b.dataset.next==='s4'?'rsvp':b.dataset.next,t=$('#'+id);
- t.classList.add('open');b.classList.add('done');
+ const id=b.dataset.next,t=$('#'+id);
+ t.classList.add('open');b.classList.add('done');if(id==='s1')$('#fab').classList.add('show');if(id==='s3')openFooter();
  requestAnimationFrame(()=>{t.scrollIntoView({behavior:rm?'auto':'smooth',block:'start'});const h=t.querySelector('h2');h&&h.focus({preventScroll:true})});
 });
 let att=null;const cnt={ad:1,ni:0};
@@ -186,10 +212,30 @@ $$('[data-c]').forEach(b=>b.onclick=()=>{
 });
 $$('[data-ev]').forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');build()});
 $('#nm').oninput=build;
-$('#send').onclick=e=>{if(!$('#nm').value.trim()||!att){e.preventDefault();$('#err').textContent=!att?'Elige si nos acompañas.':'Escribe tu nombre para poder enviarlo.'}};
-const v=$('#v'),s=$('#snd');
-s.onclick=()=>{v.muted=!v.muted;s.textContent=v.muted?'🔇':'🔊';s.setAttribute('aria-label',v.muted?'Activar sonido':'Silenciar');if(v.paused)v.play().catch(()=>{})};
-v.play&&v.play().catch(()=>{});
+$('#send').onclick=e=>{
+ if(!$('#nm').value.trim()||!att){e.preventDefault();$('#err').textContent=!att?'Elige si nos acompañas.':'Escribe tu nombre para poder enviarlo.'}
+ else setTimeout(()=>{const g=$('#s3');if(!g.classList.contains('open')){g.classList.add('open');openFooter()}},700);
+};
+const v=$('#v'),s=$('#snd');let userMuted=false,gesture=false;
+function ui(){const on=!v.muted;s.classList.toggle('on',on);s.querySelector('.ic').textContent=on?'🔊':'🔇';s.setAttribute('aria-label',on?'Silenciar sonido':'Activar sonido')}
+function sound(on){v.muted=!on;ui();if(on){const p=v.play();p&&p.catch(()=>{v.muted=true;ui();v.play().catch(()=>{})})}}
+s.onclick=()=>{gesture=true;userMuted=!v.muted;sound(v.muted)};
+['pointerdown','touchend','click','keydown'].forEach(n=>addEventListener(n,e=>{
+ if(e.target.closest&&e.target.closest('#snd'))return;gesture=true;
+ if(v.muted&&!userMuted)sound(true);
+},true));
+v.addEventListener('pause',()=>{if(document.hidden||v.ended)return;if(!v.muted&&!gesture){v.muted=true;ui()}v.play().catch(()=>{})});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)v.play().catch(()=>{})});
+v.muted=false;ui();
+const pr=v.play();pr&&pr.catch(()=>{v.muted=true;ui();v.play().catch(()=>{})});
+const fab=$('#fab');
+if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)fab.classList.add('gone')}),{threshold:.2}).observe($('#s3'));
+const ft=$('footer'),win=$('#win'),cv=$('#cv');
+[...ft.children].forEach((c,i)=>c.style.setProperty('--k',i));
+function openFooter(){ft.classList.add('open');if(!cv.src){cv.src=cv.dataset.src;cv.load()}}
+if('IntersectionObserver' in window){new IntersectionObserver(es=>es.forEach(e=>{
+ if(e.isIntersecting){win.classList.add('in');if(!rm)cv.play().catch(()=>{})}else cv.pause();
+}),{threshold:.35}).observe(win)}else{win.classList.add('in')}
 build();
 </script>
 </body>
