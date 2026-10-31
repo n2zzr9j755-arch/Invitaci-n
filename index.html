@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mau &amp; Marcel · 29 de noviembre">
 <meta property="og:description" content="La familia Peña Guijosa te invita a la Primera Comunión de Mau y el Bautizo de Marcel. Confirma tu asistencia aquí.">
-<meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/preview.jpg">
+<meta property="og:image" content="https://n2zzr9j755-arch.github.io/Invitaci-n/preview.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#2a1f16">
 <script>document.documentElement.classList.add('js')</script>
@@ -92,10 +92,10 @@ footer.open>*:not(.win){animation:up .9s cubic-bezier(.2,.7,.2,1) both;animation
 .giftcta .lead{margin:6px auto 0;font-size:24px}
 .btn.gold{background:linear-gradient(#dcb870,#c49c50);color:#2a1f16;box-shadow:0 4px 0 #8a6d34}
 .btn.gold:active{box-shadow:0 1px 0 #8a6d34}
-.fab{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:40;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 12px;border-radius:22px;border:1px solid rgba(201,164,92,.55);background:rgba(42,31,22,.74);color:#f1e9d8;font:600 13px var(--body);cursor:pointer;backdrop-filter:blur(5px);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .6s,transform .6s}
-.fab svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.fab.show{opacity:.94;transform:none;pointer-events:auto}
-.fab.show.gone{opacity:0;transform:translateY(16px);pointer-events:none}
+.fab{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:40;display:flex;align-items:center;gap:6px;min-height:34px;padding:0 12px 0 9px;border-radius:17px;border:1px solid rgba(201,164,92,.55);background:rgba(42,31,22,.74);color:#f1e9d8;font:600 12px var(--body);cursor:pointer;backdrop-filter:blur(5px);white-space:nowrap;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .6s,transform .6s}
+#fabr{left:12px}#fab{right:12px}
+.fab svg{width:16px;height:16px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fab.show:not(.gone){opacity:.94;transform:none;pointer-events:auto}
 footer b{display:block;font:italic 600 38px var(--serif);color:var(--bronze)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.open .badge svg *{stroke-dashoffset:0}.win{opacity:1;transform:none}}
 </style>
@@ -179,7 +179,10 @@ footer b{display:block;font:italic 600 38px var(--serif);color:var(--bronze)}
 <svg class="sprig" viewBox="0 0 90 30" aria-hidden="true"><path d="M8 22Q45 4 82 22" fill="none" stroke-width="1.6" stroke-linecap="round"/><g stroke="none"><ellipse cx="19" cy="12" rx="2.4" ry="6" transform="rotate(-55 19 12)"/><ellipse cx="31" cy="8.500" rx="2.4" ry="6" transform="rotate(-35 31 8.500)"/><ellipse cx="45" cy="6.500" rx="2.4" ry="6"/><ellipse cx="59" cy="8.500" rx="2.4" ry="6" transform="rotate(35 59 8.500)"/><ellipse cx="71" cy="12" rx="2.4" ry="6" transform="rotate(55 71 12)"/></g></svg>
 Gracias por acompañarnos en un día tan especial.<b>Familia Peña Guijosa</b></footer>
 </main>
+<div class="fabs">
+<button type="button" class="fab" id="fabr" data-next="rsvp" aria-label="Ir a confirmar asistencia"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-11-6.500-11-15a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8.500-11 15-11 15z"/></svg>Confirmar asistencia</button>
 <button type="button" class="fab" id="fab" data-next="s3" aria-label="Ir a las mesas de regalo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="12" width="24" height="16" rx="2"/><path d="M4 18h24M16 12v16"/><path d="M16 12c-4-8-10-5-7 0M16 12c4-8 10-5 7 0"/></svg>Mesas de regalo</button>
+</div>
 <script>
 // Número de WhatsApp que recibe las confirmaciones, con lada de país y sin signos. Ej.: "5215512345678"
 const WA="525528883099";
@@ -189,7 +192,7 @@ $$('.badge svg *').forEach(e=>e.setAttribute('pathLength',1));
 $$('.step').forEach(s=>[...s.children].forEach((c,i)=>c.style.setProperty('--k',i)));
 $$('[data-next]').forEach(b=>b.onclick=()=>{
  const id=b.dataset.next,t=$('#'+id);
- t.classList.add('open');b.classList.add('done');if(id==='s1')$('#fab').classList.add('show');if(id==='s3')openFooter();
+ t.classList.add('open');b.classList.add('done');if(id==='s1')$$('.fab').forEach(f=>f.classList.add('show'));if(id==='s3')openFooter();
  requestAnimationFrame(()=>{t.scrollIntoView({behavior:rm?'auto':'smooth',block:'start'});const h=t.querySelector('h2');h&&h.focus({preventScroll:true})});
 });
 let att=null;const cnt={ad:1,ni:0};
@@ -215,7 +218,7 @@ $$('[data-ev]').forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',b.getAtt
 $('#nm').oninput=build;
 $('#send').onclick=e=>{
  if(!$('#nm').value.trim()||!att){e.preventDefault();$('#err').textContent=!att?'Elige si nos acompañas.':'Escribe tu nombre para poder enviarlo.'}
- else setTimeout(()=>{const g=$('#s3');if(!g.classList.contains('open')){g.classList.add('open');openFooter()}},700);
+ else{rsvpDone=true;fabr.classList.add('gone');setTimeout(()=>{const g=$('#s3');if(!g.classList.contains('open')){g.classList.add('open');openFooter()}},700)}
 };
 build();
 const v=$('#v'),s=$('#snd');let userMuted=false,gesture=false;
@@ -230,8 +233,9 @@ v.addEventListener('pause',()=>{if(document.hidden||v.ended)return;if(!v.muted&&
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)v.play().catch(()=>{})});
 v.muted=false;ui();
 const pr=v.play();pr&&pr.catch(()=>{v.muted=true;ui();v.play().catch(()=>{})});
-const fab=$('#fab');
+const fab=$('#fab'),fabr=$('#fabr');let rsvpDone=false;
 if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)fab.classList.add('gone')}),{threshold:.2}).observe($('#s3'));
+if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(e=>{if(!rsvpDone)fabr.classList.toggle('gone',e.isIntersecting)}),{threshold:.2}).observe($('#rsvp'));
 const ft=$('footer'),win=$('#win'),cv=$('#cv');
 [...ft.children].forEach((c,i)=>c.style.setProperty('--k',i));
 function openFooter(){ft.classList.add('open');if(!cv.src){cv.src=cv.dataset.src;cv.load()}}
